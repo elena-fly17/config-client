@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:8888
+      enabled: true
+      discovery:
+        enabled: true
+        service-id: config-server # ????????????? ?????? ??? ?????? ??????-???????
+  config:
+    # import: "optional:configserver:http://localhost:8888"
+    import: "optional:configserver:"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+server:
+  port: 0
