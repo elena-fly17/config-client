@@ -10,7 +10,8 @@ spring:
         service-id: config-server
   config:
     import: "optional:configserver:"
-
+  profiles:
+    active: "dev"
 eureka:
   client:
     service-url:
